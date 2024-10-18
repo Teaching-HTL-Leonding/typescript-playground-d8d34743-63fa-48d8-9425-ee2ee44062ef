@@ -30,7 +30,7 @@ function setup() {
     createCanvas(necromancer0.width * IMAGE_SCALE, necromancer0.height * IMAGE_SCALE);
 
     // You can control the speed of the animation by changing the frame rate
-    frameRate(20);
+    frameRate(15);
 }
 
 let imageIndex = 0; // This variable will keep track of the current image (=frame) in the animation
@@ -60,7 +60,7 @@ function draw() {
     
 
     // Draw the selected image on the canvas
-    image(currentImage, x, 0, necromancer0.width * IMAGE_SCALE, necromancer0.height * IMAGE_SCALE);
+    image(currentImage, x, 0, necromancer0.width * IMAGE_SCALE, necromancer0.height *  IMAGE_SCALE);
 
     // Move to the next image in the animation. If we reach the end, start over.
     imageIndex++;
