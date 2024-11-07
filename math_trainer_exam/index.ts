@@ -1,18 +1,14 @@
-// This program generates a simple math quiz in a graphical window, where the user selects the correct result
-// of a randomly generated arithmetic operation.
-
-// <<< TODO: Declare your GLOBAL variables here
 let randomOperand1 = 0
 let randomOperand2 = 0
 
 let randomOperator = 0
-let operator = ''
+    let operator = ''
 
 let ergebnis = 0
-let randomPosition = Math.floor(random(0, 3))
+    let randomPosition = Math.floor(random(0, 3))
 
-let wrongAnswer1 = Math.floor(random(-100, 250))
-let wrongAnswer2 = Math.floor(random(100, 500))
+let wrongAnswer1 = Math.floor(random(-100, 400))
+    let wrongAnswer2 = Math.floor(random(100, 800))
 
 // setup function runs once and sets up the quiz elements on the canvas
 function setup() {
@@ -39,14 +35,17 @@ function setup() {
         text(wrongAnswer1, width / 3, height / 2)
         text(wrongAnswer2, width / 3, height / 2)
     }
-
+     else
+    
+    
+{
     createCanvas(400, 400);
     background("black");
 
     fill("yellow")
-    textSize(70)
+    textSize(40)
     text(randomOperand1, width / 4, 100)
-    text(randomOperand2, width / 2, 100)
+    text(randomOperand2, width / 2, 100) }
 
 
 
