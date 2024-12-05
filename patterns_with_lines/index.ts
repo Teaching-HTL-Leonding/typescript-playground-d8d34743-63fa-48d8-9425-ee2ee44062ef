@@ -18,13 +18,5 @@ function mouseMoved() {
     noFill();
     stroke("aqua");
 
-
-}
-
-function draw() {
-    background(255)
-    // draw the zigzag pattern
-    for
-
-
+    // create a line 
 }
