@@ -18,5 +18,5 @@ function mouseMoved() {
     noFill();
     stroke("aqua");
 
-    // create a line 
+    // <<< Add your code here
 }
