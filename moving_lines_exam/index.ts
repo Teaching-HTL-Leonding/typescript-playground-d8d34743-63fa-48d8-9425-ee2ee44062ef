@@ -18,13 +18,15 @@ let lineEndDx: number[] = [];    // Movement of end point per frame in X and Y d
 let lineEndDy: number[] = [];
 
 let minColor = 0;               // Lower bound of random hue value
-let maxColor = 360;             // Upper bound of random hue value
+let maxColor = 360;
+
+let linie = 3           // Upper bound of random hue value
 
 function setup() {
 
     createCanvas(500, 500);
     colorMode(HSB);
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < linie; i++) {
         // Set random start and end position
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -43,35 +45,49 @@ function setup() {
     }
 }
 
+
 function draw() {
     background("black");
-    for (let i = 0; i < 10; i++)
-        push();
-
+    for (let i = 0; i < linie; i++) {
+    fill("skyblue");
+    rect(0, 0, 50, 50)
+    rect(50, 0, 50, 50)
+    stroke("black")
+    // Plus
+    line(15, 25, 35, 25);
+    line(25, 15, 25, 35);
+    // Minus
+    line(65, 25, 85, 25); 
+   
+    
+    push();
     stroke(lineColor[i], 100, 100);
     strokeWeight(2);
     line(lineStartX[i], lineStartY[i], lineEndX[i], lineEndY[i]);
 
     // Move start and end point
-    lineStartX += lineStartDx;
-    lineStartY += lineStartDy;
-    lineEndX += lineEndDx;
-    lineEndY += lineEndDy;
+    lineStartX[i] += lineStartDx[i];
+    lineStartY[i] += lineStartDy[i];
+    lineEndX[i] += lineEndDx[i];
+    lineEndY[i] += lineEndDy[i];
 
     // Reverse direction when edge has been reached
     if (lineStartX[i] < 0 || lineStartX[i] > width) {
-        lineStartDx[i] = -lineStartDx;
+        lineStartDx[i] = -lineStartDx[i];
     }
     if (lineStartY[i] < 0 || lineStartY[i] > height) {
-        lineStartDy[i] = -lineStartDy;
+        lineStartDy[i] = -lineStartDy[i];
     }
 
     if (lineEndX[i] < 0 || lineEndX[i] > width) {
-        lineEndDx[i] = -lineEndDx;
+        lineEndDx[i] = -lineEndDx[i];
     }
     if (lineEndY[i] < 0 || lineEndY[i] > height) {
         lineEndDy[i] = -lineEndDy[i];
     }
 
     pop();
+} 
 }
+
+
