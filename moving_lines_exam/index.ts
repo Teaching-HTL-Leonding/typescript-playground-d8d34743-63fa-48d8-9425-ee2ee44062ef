@@ -6,11 +6,11 @@
 // "max hue" is the maximum hue (HSB color space), can be between 0 and 360
 const CONFIGURATION = "5;0-360";
 
-let lineStartX: number = 0;     // Start coordinates of line
-let lineStartY: number = 0;
-let lineEndX: number = 0;       // End coordinates of line
-let lineEndY: number = 0;
-let lineColor: number = 0;
+let lineStartX: number []=[] // Start coordinates of line
+let lineStartY: number []=[]
+let lineEndX: number []=[]     // End coordinates of line
+let lineEndY: number []=[]
+let lineColor: number []=[]
 
 let lineStartDx: number = 0;    // Movement of start point per frame in X and Y direction
 let lineStartDy: number = 0;
@@ -37,7 +37,7 @@ function setup() {
     lineEndDy = random(0, 5);
 
     // Set random color
-    lineColor = random(minColor, maxColor);
+    lineColor = random(minColor, maxColor); 
 }
 
 function draw() {
