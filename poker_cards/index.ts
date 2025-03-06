@@ -15,7 +15,7 @@ function setup() {
     const pair = "5H,5D,6H,7D,8H";
     const highCard = "2H,3D,5S,7C,0H";
     const random = shuffleCards();
-    
+
     // Test the program with the example hands
     //                 +---------- Change this line to test different hands
     //                 |           (e.g. royalFlush, straightFlush, fourOfAKind, ...)
@@ -78,8 +78,17 @@ function draw() {
 * The function splits the string into an array of cards.
 */
 function splitCardsString(cards: string): string[] {
-    // DELETE the following line and replace it with
-    // a working solution for the function.
+    let currentNumber = "";
+    for (let i = 0; i < splitCardsString.length; i++) {
+        if (splitCardsString[i] === ",") {
+            currentNumber = "";
+        } else {
+            currentNumber += splitCardsString[i];
+        }
+    }
+    if (currentNumber) {
+        
+    }
     return ['0H', '0H', '0H', '0H', '0H'];
 }
 
